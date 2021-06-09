@@ -61,6 +61,11 @@ public class webView extends AppCompatActivity {
 
         webView.setWebChromeClient(new WebChromeClient()
         {
+
+            public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+                callback.invoke(origin, true, false);
+            }
+
             // For 3.0+ Devices (Start)
             // onActivityResult attached before constructor
             protected void openFileChooser(ValueCallback uploadMsg, String acceptType)
