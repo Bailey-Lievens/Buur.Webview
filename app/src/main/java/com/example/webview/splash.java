@@ -3,6 +3,7 @@ package com.example.webview;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -14,17 +15,19 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class splash extends AppCompatActivity {
     private int FINE_LOCATION_PERMISSION = 1;
 
-    Button btn_start;
+    ImageView btn_start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         btn_start = findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() { //Re-adds the onclickListener
             @Override
